@@ -3,12 +3,12 @@ const cacheName = 'cache-version-1';
 
 // Archivos/Recursos que vamos a "cachear"
 const precache = [
-  'js/register-sw.js',
-  'index.html',
-  'js/components/details.js',
-  'js/components/favorites.js',
-  'js/components/home.js',
-  'js/main.js',
+  './js/register-sw.js',
+  './index.html',
+  './js/components/details.js',
+  './js/components/favorites.js',
+  './js/components/home.js',
+  './js/main.js',
   //'./js/to-do.js',
 ];
 
