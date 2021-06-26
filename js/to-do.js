@@ -1,4 +1,4 @@
-window.onload = function(){
+/* window.onload = function(){
     init();
 };
 
@@ -50,4 +50,4 @@ function renderAllTodos(todos) {
 function todoToHtml(todo) {
     return `<li><button id="${todo._id}"
       class="btn btn-link bi bi-trash"></button>${todo.text}</li>`;
-}
+} */

@@ -1,12 +1,12 @@
 {
-    "theme_color": "#3547f6",
+    "theme_color": "#ffaa00",
     "background_color": "#ffffff",
     "display": "fullscreen",
     "scope": "/",
     "start_url": "index.html",
-    "name": "Catedra PWA",
-    "short_name": "CAT PWA",
-    "description": "PWA Boilerplate",
+    "name": "Animepedia",
+    "short_name": "Anime",
+    "description": "Animepedia",
     "prefer_related_applications": false,
     "icons": [
         {

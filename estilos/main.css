@@ -1,0 +1,85 @@
+/* Link a la paleta de color
+
+https://coolors.co/ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-a0c4ff-bdb2ff-ffc6ff
+
+
+
+*/
+/* CSS HEX */
+:root {
+    --light-pink: #ffadadff;
+    --deep-champagne: #ffd6a5ff;
+    --lemon-yellow-crayola: #fdffb6ff;
+    --tea-green: #caffbfff;
+    --celeste: #9bf6ffff;
+    --baby-blue-eyes: #a0c4ffff;
+    --maximum-blue-purple: #bdb2ffff;
+    --mauve: #ffc6ffff;
+}
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+nav div {
+    display: flex;
+    margin: auto;
+}
+#results, #results a {
+    padding-top: 50px;
+}
+#results a {
+    text-decoration: none;
+}
+#results a div.card {
+    height: 490px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+#results a div.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+div.card img {
+    height: 350px;
+}
+.card-body > p:first-child {
+    font-size: 1.05em;
+    font-weight: 500;
+    color: var(--light-pink);
+}
+.card-body > p:last-child {
+    color: var(--baby-blue-eyes);
+}
+#detalle-img img{
+    max-width: 60%;
+}
+#detalle-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#detalle-title h1{
+    font-size: 2em;
+    color: var(--light-pink);
+    margin: 0;
+}
+#detalle-title p{
+    margin: 0;
+}
+#detalle-title div{
+    display: flex;
+}
