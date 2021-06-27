@@ -1,15 +1,31 @@
 // Nombre del Cache
-const cacheName = 'cache-version-1';
+const cacheName = 'cache-version-10';
 
 // Archivos/Recursos que vamos a "cachear"
 const precache = [
   './js/register-sw.js',
   './index.html',
-  './js/components/details.js',
+  './js/main.js',
+  './js/components/detail.js',
   './js/components/favorites.js',
   './js/components/home.js',
-  './js/main.js',
-  //'./js/to-do.js',
+  './estilos/main.css',
+  './estilos/bootstrap/css/bootstrap.css',
+  './estilos/bootstrap/js/bootstrap.bundle.min.js',
+  './estilos/bootstrap/js/jquery-3.5.1.min.js',
+  './lib/vue-router.js',
+  './lib/vue.js',
+  './lib/dexie.min.js',
+  './manifest.json',
+  './js/db.js',
+  './img/favorito.svg',
+  './img/favorito-check.svg',
+  './img/favicon.png',
+  './img/icon-192x192.png',
+  './img/icon-256x256.png',
+  './img/icon-384x384.png',
+  './img/icon-512x512.png',
+  './img/logo.png',
 ];
 
 

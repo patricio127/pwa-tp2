@@ -18,11 +18,16 @@ https://coolors.co/ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-a0c4ff-bdb2ff-ffc6ff
 }
 h1{
     font-size: 3em;
-    text-align: center;
+    text-align: left;
 }
+
 h2 {
-    font-size: 2em;
-    text-align: center;
+    font-size: 1.5em;
+    padding: 20px 0;
+    color: var(--light-pink);
+}
+p {
+    color: #343a40;
 }
 .visually-hidden {
     position: absolute;
@@ -39,33 +44,48 @@ nav div {
     display: flex;
     margin: auto;
 }
-#results, #results a {
-    padding-top: 50px;
+#nav a span{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+a.nav-link {
+    font-size: 1.5em;
+    width: 4.5em;
+    text-align: center;
+}
+#results, #results a, #favorites a {
+    padding-top: 30px;
 }
 #results a {
     text-decoration: none;
 }
-#results a div.card {
-    height: 490px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+#results a div.card, #favorites a div.card {
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
 }
-#results a div.card:hover {
+#results a div.card:hover, #favorites a div.card:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 div.card img {
     height: 350px;
 }
 .card-body > p:first-child {
-    font-size: 1.05em;
+    font-size: 1em;
     font-weight: 500;
     color: var(--light-pink);
+    margin: 0;
 }
 .card-body > p:last-child {
     color: var(--baby-blue-eyes);
 }
-#detalle-img img{
-    max-width: 60%;
+#detalle-img{
+    display: flex;
+
 }
 #detalle-title {
     display: flex;
@@ -76,10 +96,64 @@ div.card img {
     font-size: 2em;
     color: var(--light-pink);
     margin: 0;
-}
-#detalle-title p{
-    margin: 0;
+    max-width: 550px;
 }
 #detalle-title div{
     display: flex;
+    align-items: center;
+}
+#detalle-title div p{
+    margin: 0;
+}
+#detalle-title div p > span:first-child{
+    color: #adb5bd;
+}
+#detalle-title div p > span:last-child{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--deep-champagne);
+}
+#detalle-fecha {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0;
+}
+#detalle-fecha p > span:first-child, #detalle-fecha p:first-child, 
+ #detalle-rated p span:first-child{
+    color: #adb5bd;
+}
+#detalle-rated p:first-child {
+    color: var(--maximum-blue-purple);
+    font-weight: 700;
+}
+#detalle-fecha p > span:last-child, #detalle-rated p span:last-child{
+    font-weight: 700;
+    color: #495057;
+}
+#detalle-rated {
+    display: flex;
+    flex-direction: column;
+}
+#icono-favorito {
+    display: block;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-image: url("../img/favorito.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+#icono-favorito.active {
+    background-image: url("../img/favorito-check.svg");
+}
+#favorites, #results {
+    padding-bottom: 100px;
+}
+#favorites h1 {
+    margin-bottom: 50px;
+}
+#favorites a {
+    text-decoration: none;
 }

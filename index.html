@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="img/favicon.png" type="favicon/x-icon"/>
 
     <!-- Include Dexie -->
-    <!-- <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script> -->
+    <script src="lib/dexie.min.js"></script> 
     <style>
       ul li {
         list-style: none;
@@ -24,19 +24,17 @@
     <div id="app">
       <header >
         <h1 class="visually-hidden">Animepedia</h1>
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="d-flex">
-            <router-link class="navbar-brand" to="/">Home</router-link>
-            <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <router-link class="nav-link" to="/favorites">My favorites</router-link>
-                </li>
-              </ul>
-            </div>
+        <nav class="navbar navbar-expand navbar-light">
+          <div class="d-flex" id="nav">
+            <router-link to="/"><span></span></router-link>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <router-link class="nav-link" to="/">Home</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/favorites">Favorites</router-link>
+              </li>
+            </ul>
           </div>  
         </nav>
       </header>
@@ -54,11 +52,11 @@
     <script src="estilos/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="lib/vue.js"></script>
     <script src="lib/vue-router.js"></script>
+    <script src="js/register-sw.js"></script>
+    <script src="js/db.js"></script>
     <script src="js/components/home.js"></script>
     <script src="js/components/detail.js"></script>
     <script src="js/components/favorites.js"></script>
-    <script src="js/register-sw.js"></script>
-    <script src="js/to-do.js"></script>
     <script src="js/main.js"></script>
     
     

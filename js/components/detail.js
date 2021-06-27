@@ -9,17 +9,18 @@ Vue.component("DetailComponent", {
                     <div id="detalle-title">
                         <h1>{{detail.title}}</h1>
                         <div>
-                            <p>Score: {{detail.score}}</p>
-                            <a href="#">Agregar</a>
+                            <p><span>Score:</span> <span>{{detail.score}}</span></p>
+                            <a href="#" id="icono-favorito" v-on:click.prevent="favorite" v-bind:class="{ active: isFav }">Agregar</a>
                         </div>
                     </div>
-                    <div>
+                    <div id="detalle-fecha">
                         <p>Aired: {{detail.aired.string}}</p>
-                        <p>Popularity: {{detail.popularity}}</p>
+                        <p><span>Popularity:</span> <span>{{detail.popularity}}</span></p>
                     </div>
-                    <div>
+                    <div id="detalle-rated">
                         <p>{{detail.episodes}} episodes</p>
-                        <p>Rated: {{detail.rating}}</p>
+                        <p><span>Rated:</span> <span>{{detail.rating}}</span></p>
+                        <a :href="detail.trailer_url" target="_blank"><span v-if="detail.trailer_url">Trailer</span></a>
                     </div>
                     <div>
                         <h2>Synopsis</h2>
@@ -27,29 +28,64 @@ Vue.component("DetailComponent", {
                     </div>
                 </div>
             </div>
+            <div v-if="error">
+                Couldn't load anime data.
+            </div>
         </div>
     </section>`,
     data: function(){
         return{
             detail: null,
+            isFav: false,
             error: false,
         }
     },
-    mounted() {
-        const fetchPromise = fetch(`${BASE_URL}/anime/${this.$route.params.id}`)
 
-        fetchPromise.then(response => {
-            if (response.ok === true) {
-                return response.json();
-                
-            }
-        }).then(result => {
-            this.detail = result;
-            console.log(this.detail);
-        }).catch(err => {
-            this.error = true;
-        });
+    mounted() {
+        if (navigator.onLine) {
+            const fetchPromise = fetch(`${BASE_URL}/anime/${this.$route.params.id}`);
+    
+            fetchPromise.then(response => {
+                if (response.ok === true) {
+                    return response.json();
+                    
+                }
+            }).then(result => {
+                this.detail = result;
+                getOne(this.detail.mal_id).then(fav =>{
+                    if(fav){
+                        this.isFav = true;
+                        update(this.detail);
+                    }
+                })
+            }).catch(err => {
+                this.error = true;
+            });
+
+        } else {
+            getOne(this.$route.params.id).then(fav =>{
+                if(fav){
+                    this.detail = fav;
+                    this.isFav = true;
+                } else {
+                    this.error = true;
+                }
+            })
+        }
+        
     },
     methods: {
+        favorite: function() {
+            if(this.isFav) {
+                remove(this.detail).then(()=> {
+                    this.isFav = false;
+                })
+            } else {
+                add(this.detail).then(() => {
+                    this.isFav = true;
+                });
+            }
+            
+        }
     }
 })

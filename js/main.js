@@ -11,13 +11,17 @@ const routes = [
     {path: '*', redirect: '/' },
 ];
 
-const router = new VueRouter ({
-    routes
-});
 
 
-const app = new Vue({
-    el: '#app',
-    router,
-    
-})
+window.onload = function(){
+    initDB().then(()=> {
+        const router = new VueRouter ({
+            routes
+        });
+        const app = new Vue({
+            el: '#app',
+            router,
+        })
+    });
+};
+
