@@ -56,7 +56,6 @@ Vue.component("HomeComponent", {
                 }).then(result => {
                     if (result){
                         this.results = result['results'];
-                        console.log(this.results);
                     }
                 }).catch(err => {
                     this.error = true;
