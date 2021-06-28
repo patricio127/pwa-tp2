@@ -71,8 +71,12 @@ a.nav-link {
 #results a div.card:hover, #favorites a div.card:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-div.card img {
+.card > div:first-of-type {
     height: 350px;
+    overflow: hidden;
+}
+div.card img {
+    height: auto;
 }
 .card-body > p:first-child {
     font-size: 1em;
@@ -83,14 +87,23 @@ div.card img {
 .card-body > p:last-child {
     color: var(--baby-blue-eyes);
 }
+
 #detalle-img{
     display: flex;
-
+    justify-content: center;
+    align-items: flex-start;
 }
 #detalle-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+@media (max-width: 480px){
+    #detalle-title {
+        margin-top: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
 #detalle-title h1{
     font-size: 2em;
